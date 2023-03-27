@@ -7,12 +7,12 @@ describe('employees', function() {
         delete employee[key];
       }
 
-      employee.name = 'Sam';
+      employee.name = 'sam';
     });
 
     it('returns an employee with the original key value pairs and the new key value pair', function () {
       expect(updateEmployeeWithKeyAndValue(employee, 'streetAddress', '11 Broadway')).to.eql({
-        name: 'Sam',
+        name: 'sam',
         streetAddress: '11 Broadway'
       });
     });
@@ -27,12 +27,12 @@ describe('employees', function() {
   describe('destructivelyUpdateEmployeeWithKeyAndValue(employee, key, value)', function () {
     it('updates `employee` with the given `key` and `value` (it is destructive) and returns the entire updated employee', function () {
       expect(destructivelyUpdateEmployeeWithKeyAndValue(employee, 'streetAddress', '12 Broadway')).to.eql({
-        name: 'Sam',
+        name: 'sam',
         streetAddress: '12 Broadway'
       });
 
       expect(employee).to.eql({
-        name: 'Sam',
+        name: 'sam',
         streetAddress: '12 Broadway'
       });
     });
@@ -49,7 +49,7 @@ describe('employees', function() {
     it('does not modify the original employee (it is non-destructive)', function () {
       deleteFromEmployeeByKey(employee, 'name');
 
-      expect(employee['name']).to.equal('Sam');
+      expect(employee['name']).to.equal('sam');
     });
   });
 
